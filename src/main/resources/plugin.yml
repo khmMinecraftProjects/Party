@@ -1,0 +1,13 @@
+name: ${project.name}
+author: khmDEV
+main: ${project.groupId}.${project.artifactId}.init
+version: ${project.version}
+commands:
+   party:
+      permission: party.command
+      permission-message: No tienes permisos <permission>
+permissions:
+         party.command:
+                 default: op
+softdepend: [APIGames]
+Depend: [APIGames]
