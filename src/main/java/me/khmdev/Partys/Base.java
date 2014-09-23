@@ -71,7 +71,7 @@ public class Base  {
 					return true;
 				}
 				gestor.crearParty(pl);
-				sender.sendMessage("Partida creada");
+				sender.sendMessage("Party creada");
 				return true;
 			}
 			if (args[0].equalsIgnoreCase("salir")) {
@@ -134,8 +134,8 @@ public class Base  {
 			if (args[0].equalsIgnoreCase("invitar")) {
 				Party par = gestor.getParty(pl);
 				if (par == null) {
-					sender.sendMessage("No estas en ninguna partida");
-					return true;
+					gestor.crearParty(pl);
+					par = gestor.getParty(pl);	
 				}
 				if (par.getOwn() != pl) {
 					sender.sendMessage("No tienes permisos para invitar a nadie en esta party");
@@ -151,7 +151,7 @@ public class Base  {
 					return true;
 				}
 				if (par.esta(pl2)) {
-					sender.sendMessage(args[1] + " ya esta en la partida");
+					sender.sendMessage(args[1] + " ya esta en la party");
 					return true;
 				}
 				if (par.tienePeticion(pl2)) {

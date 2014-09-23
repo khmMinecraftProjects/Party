@@ -3,7 +3,7 @@ package me.khmdev.Partys;
 import java.util.Collections;
 import java.util.List;
 
-import me.khmdev.APIGames.ListenAPIG.JugadorEntraEvent;
+import me.khmdev.APIGames.ListenAPIG.jugador.JugadorEntraEvent;
 import me.khmdev.APIGames.Partidas.IPartida;
 import me.khmdev.Partys.Gestores.Gestor;
 import me.khmdev.Partys.Gestores.Party;
