@@ -20,7 +20,6 @@ public class Base  {
 		gestor = new Gestor();
 		Bukkit.getServer().getPluginManager().registerEvents(
 				new ListenerParty(gestor), pl);
-
 	}
 
 	

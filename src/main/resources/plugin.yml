@@ -9,5 +9,5 @@ commands:
 permissions:
          party.command:
                  default: op
-softdepend: [APIGames]
-Depend: [APIGames]
+softdepend: [APIGames,Friends]
+Depend: [APIGames,Friends]

@@ -1,15 +1,14 @@
 package me.khmdev.Partys;
 
+import me.khmdev.Partys.Gestores.PartyItem;
+
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
-
-public class init extends JavaPlugin{
+public class init extends JavaPlugin {
 	private Base base;
-
 
 	public void onEnable() {
 		if (!hasPluging("APIGames")) {
@@ -19,7 +18,11 @@ public class init extends JavaPlugin{
 			setEnabled(false);
 			return;
 		}
-		base=new Base(this);
+		base = new Base(this);
+		if (hasPluging("Friends")) {
+			me.khmdev.Friends.Gestores.InventoryFriendItem
+					.addFactory(new PartyItem());
+		}
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label,
@@ -32,7 +35,6 @@ public class init extends JavaPlugin{
 		return false;
 	}
 
-
 	private static boolean hasPluging(String s) {
 		try {
 			return Bukkit.getPluginManager().getPlugin(s).isEnabled();
@@ -41,8 +43,9 @@ public class init extends JavaPlugin{
 		}
 		return false;
 	}
+
 	@Override
-	public void onDisable(){
+	public void onDisable() {
 
 	}
 
